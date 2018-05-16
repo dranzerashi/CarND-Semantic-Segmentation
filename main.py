@@ -149,7 +149,7 @@ def run():
 
 
         # TODO: Train NN using the train_nn function
-        epochs = 50
+        epochs = 30
         batch_size = 16
 
         correct_label = tf.placeholder(tf.float32, [None, image_shape[0],image_shape[1],num_classes], name="correct_label")
