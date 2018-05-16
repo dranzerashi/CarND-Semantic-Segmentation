@@ -104,7 +104,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     """
     # TODO: Implement function
     LEARNING_RATE = 0.001
-    KEEP_PROB = 0.5
+    KEEP_PROB = 0.7
 
     sess.run(tf.global_variables_initializer())
     for epoch in range(epochs):
@@ -146,10 +146,10 @@ def run():
 
         # TODO: Train NN using the train_nn function
         epochs = 6
-        batch_size = 1
+        batch_size = 16
 
         correct_label = tf.placeholder(tf.float32, [None, image_shape[0],image_shape[1],num_classes], name="correct_label")
-        learning_rate = tf.placeholder(tf.float32, name="correct_label")
+        learning_rate = tf.placeholder(tf.float32, name="learning_rate")
         logits, train_op, cross_entropy_loss = optimize(layer_output, correct_label, learning_rate, num_classes)
         train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_loss, input_image, correct_label, keep_prob, learning_rate)
 
