@@ -103,7 +103,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     :param learning_rate: TF Placeholder for learning rate
     """
     # TODO: Implement function
-    LEARNING_RATE = 0.001
+    LEARNING_RATE = 0.0001
     KEEP_PROB = 0.7
 
     sess.run(tf.global_variables_initializer())
@@ -145,7 +145,7 @@ def run():
 
 
         # TODO: Train NN using the train_nn function
-        epochs = 6
+        epochs = 30
         batch_size = 16
 
         correct_label = tf.placeholder(tf.float32, [None, image_shape[0],image_shape[1],num_classes], name="correct_label")
